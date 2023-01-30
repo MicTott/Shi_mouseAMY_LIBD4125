@@ -1,10 +1,4 @@
 #!/bin/bash
-#$ -pe local 10
-#$ -l mem_free=64G
-#$ -l h_fsize=100G
-#$ -O /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/FASTQ
-#$ -m e
-#$ -M michael.totty@libd.org
 
 # load SRAtoolkit
 module load sratoolkit
