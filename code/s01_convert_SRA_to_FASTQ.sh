@@ -3,8 +3,8 @@
 #$ -l mem_free=16G
 #$ -l h_vmem=16G
 #$ -l h_fsize=200G
-#$ -o /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/logs/mouseAmy_convert_SRA.txt
-#$ -e /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/logs/mouseAmy_convert_SRA.txt
+#$ -o ./logs/jobSubmit_tag-Shi_mouseAMY_convert_FASTQ_log.txt
+#$ -e ./logs/jobSubmit_tag-Shi_mouseAMY_convert_FASTQ_log.txt
 #$ -m e
 #$ -M michael.totty@libd.org
 
@@ -23,9 +23,11 @@ module load sratoolkit
 
 # change directory to ensure local. sra files are found
 # otherwise, fastq-dump will re-download .sra files and take way longer
-/dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data
 
-fasterq-dump --split-files SRA/SRR15666960 -O FASTQ/ -p
+fasterq-dump --split-files  \
+            /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/SRA/SRR15666960 \
+            -O /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/FASTQ/
+
 # -gzip created zipped file
 # --spilt-files to seperate forward and reverse reads into seperate files
 # -O output directory
