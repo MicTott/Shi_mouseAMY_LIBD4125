@@ -1,0 +1,18 @@
+**** Job starts ****
+Thu Feb  2 15:18:08 EST 2023
+**** JHPCE info ****
+User: mtotty
+Job id: 2886464
+Job name: s01_convert_SRA_to_FASTQ.sh
+Hostname: compute-146.cm.cluster
+Task id: undefined
+Processing SRR15666960
+spots read      : 371,622,294
+reads read      : 743,244,588
+reads written   : 743,244,588
+Processing SRR15666961
+spots read      : 339,322,865
+reads read      : 678,645,730
+reads written   : 678,645,730
+**** Job ends ****
+Thu Feb  2 16:08:25 EST 2023
