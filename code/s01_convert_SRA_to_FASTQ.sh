@@ -23,7 +23,7 @@ module load sratoolkit
 
 # change directory to ensure local. sra files are found
 # otherwise, fastq-dump will re-download .sra files and take way longer
-/dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/SRA
+/dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data
 
 # -gzip created zipped file
 # --spilt-files to seperate forward and reverse reads into seperate files
