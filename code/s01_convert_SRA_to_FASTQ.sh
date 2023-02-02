@@ -1,4 +1,5 @@
 #!/bin/bash
+#$ -cwd
 #$ -pe local 8
 #$ -l mem_free=32G
 #$ -l h_vmem=32G
