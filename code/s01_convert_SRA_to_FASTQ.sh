@@ -25,15 +25,16 @@ module load sratoolkit
 # otherwise, fastq-dump will re-download .sra files and take way longer
 /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data
 
+fasterq-dump --split-files SRA/SRR15666960 -O FASTQ/ -p
 # -gzip created zipped file
 # --spilt-files to seperate forward and reverse reads into seperate files
 # -O output directory
 # all files SRR15666956 SRR15666957 SRR15666958 SRR15666959 SRR15666960 SRR15666961
-for f in SRR15666960 SRR15666961
-do
-    echo "Processing $f"
-    fasterq-dump --split-files SRA/$f -O FASTQ/
-done
+#for f in SRR15666960 SRR15666961
+#do
+#    echo "Processing $f"
+#    fasterq-dump --split-files SRA/$f -O FASTQ/
+#done
 
 echo "**** Job ends ****"
 date
