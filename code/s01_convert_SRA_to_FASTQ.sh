@@ -1,11 +1,11 @@
 #!/bin/bash
 #$ -cwd
-#$ -pe local 8
-#$ -l mem_free=32G
-#$ -l h_vmem=32G
-#$ -l h_fsize=400G
-#$ -o ./logs/jobSubmit_tag-Shi_mouseAMY_convert_FASTQ_log_take2.txt
-#$ -e ./logs/jobSubmit_tag-Shi_mouseAMY_convert_FASTQ_log_take2.txt
+#$ -pe local 6
+#$ -l mem_free=16G
+#$ -l h_vmem=16G
+#$ -l h_fsize=200G
+#$ -o ./logs/jobSubmit_tag-s01_convert_SRA_to_FASTQ_log.txt
+#$ -e ./logs/jobSubmit_tag-s01_convert_SRA_to_FASTQ_log.txt
 #$ -m e
 #$ -M michael.totty@libd.org
 
@@ -22,16 +22,21 @@ echo "Task id: ${SGE_TASK_ID}"
 # load SRAtoolkit
 module load sratoolkit
 
-# -gzip created zipped file
-# --spilt-files to seperate forward and reverse reads into seperate files
-# -O output directory
-# all files SRR15666956 SRR15666957 SRR15666958 SRR15666959 SRR15666960 SRR15666961
-for f in SRR15666960 SRR15666961
+
+# files to download found below
+# https://www.ncbi.nlm.nih.gov/biosample?Db=biosample&DbFrom=bioproject&Cmd=Link&LinkName=bioproject_biosample&LinkReadableName=BioSample&ordinalpos=1&IdsFromResult=758270
+for f in SRR15666956 SRR15666957 SRR15666958 SRR15666959 SRR15666960 SRR15666961
 do
     echo "Processing $f"
+    # -gzip created zipped file
+    # --spilt-files to seperate forward and reverse reads into seperate files
+    # -O output directory   
     fasterq-dump --split-files /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/SRA/$f -O /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/FASTQ/
 
 done
+
+# zip files
+gzip /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/FASTQ/*.fastq
 
 echo "**** Job ends ****"
 date
