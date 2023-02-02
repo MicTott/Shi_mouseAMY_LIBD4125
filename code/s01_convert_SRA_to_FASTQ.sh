@@ -1,9 +1,10 @@
 #!/bin/bash
-#$ -l mem_free=128G
-#$ -l h_vmem=128G
+#$ -pe local 8
+#$ -l mem_free=16G
+#$ -l h_vmem=16G
 #$ -l h_fsize=200G
-#$ -o logs/mouseAmy_convert_SRA.txt
-#$ -e logs/mouseAmy_convert_SRA.txt
+#$ -o /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/logs/mouseAmy_convert_SRA.txt
+#$ -e /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/logs/mouseAmy_convert_SRA.txt
 #$ -m e
 #$ -M michael.totty@libd.org
 
@@ -28,8 +29,11 @@ module load sratoolkit
 # --spilt-files to seperate forward and reverse reads into seperate files
 # -O output directory
 # all files SRR15666956 SRR15666957 SRR15666958 SRR15666959 SRR15666960 SRR15666961
-fastq-dump --gzip --split-files SRR15666956 -O /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/FASTQ
-
+for f in SRR15666960 SRR15666961
+do
+    echo "Processing $f"
+    fasterq-dump --split-files SRA/$f -O FASTQ/
+done
 
 echo "**** Job ends ****"
 date
