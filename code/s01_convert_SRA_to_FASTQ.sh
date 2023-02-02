@@ -24,9 +24,7 @@ module load sratoolkit
 # change directory to ensure local. sra files are found
 # otherwise, fastq-dump will re-download .sra files and take way longer
 
-fasterq-dump --split-files  \
-            /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/SRA/SRR15666960 \
-            -O /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/FASTQ/
+fasterq-dump --split-files /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/SRA/SRR15666960 -O /dcs04/lieber/marmaypag/Shi_mouseAMY_LIBD4125/raw-data/FASTQ/
 
 # -gzip created zipped file
 # --spilt-files to seperate forward and reverse reads into seperate files
