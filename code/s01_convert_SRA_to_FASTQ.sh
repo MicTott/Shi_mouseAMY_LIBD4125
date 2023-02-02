@@ -1,10 +1,10 @@
 #!/bin/bash
 #$ -pe local 8
-#$ -l mem_free=16G
-#$ -l h_vmem=16G
-#$ -l h_fsize=200G
-#$ -o ./logs/jobSubmit_tag-Shi_mouseAMY_convert_FASTQ_log.txt
-#$ -e ./logs/jobSubmit_tag-Shi_mouseAMY_convert_FASTQ_log.txt
+#$ -l mem_free=32G
+#$ -l h_vmem=32G
+#$ -l h_fsize=400G
+#$ -o ./logs/jobSubmit_tag-Shi_mouseAMY_convert_FASTQ_log_take2.txt
+#$ -e ./logs/jobSubmit_tag-Shi_mouseAMY_convert_FASTQ_log_take2.txt
 #$ -m e
 #$ -M michael.totty@libd.org
 
