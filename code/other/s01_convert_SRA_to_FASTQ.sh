@@ -25,7 +25,7 @@ module load sratoolkit
 
 # files to download found below
 # https://www.ncbi.nlm.nih.gov/biosample?Db=biosample&DbFrom=bioproject&Cmd=Link&LinkName=bioproject_biosample&LinkReadableName=BioSample&ordinalpos=1&IdsFromResult=758270
-# for f in SRR15666956 SRR15666957 SRR15666958 SRR15666959 SRR15666960 SRR15666961
+for f in SRR15666956 SRR15666957 SRR15666958 SRR15666959 SRR15666960 SRR15666961
 do
     echo "Processing $f"
     # -gzip created zipped file
