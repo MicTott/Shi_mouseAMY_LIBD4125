@@ -26,7 +26,7 @@ module load cellranger/7.0.0
 module list
 
 ## Locate file
-SAMPLE=$(awk "NR==${SGE_TASK_ID}" 01_cellranger.txt)
+SAMPLE=$(awk "NR==${SGE_TASK_ID}" 03_cellranger.txt)
 echo "Processing sample ${SAMPLE}"
 date
 
